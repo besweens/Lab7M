@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class myFoodPopularity implements IFoodPopularity{
+
+	@Override
+	public List<String> getFoodPopularity(TreeMap<String, TreeSet<String>> countryFoodSet, List<String> countries1,
+			List<String> countries2) {
+		// Count the number of countries in countries1 and countries2 that have each food as popular
+		TreeMap<String, Integer> foodCount = new TreeMap<>();
+		for (String country : countryFoodSet.keySet()) {
+			TreeSet<String> foods = countryFoodSet.get(country);
+			for (String food : foods) {
+				if (!foodCount.containsKey(food)) {
+					foodCount.put(food, 0);
+				}
+				if (countries1.contains(country)) {
+					foodCount.put(food, foodCount.get(food) + 1);
+				} else if (countries2.contains(country)) {
+					foodCount.put(food, foodCount.get(food) - 1);
+				}
+			}
+		}
+
+
+
+		return null;
+
+	}}
