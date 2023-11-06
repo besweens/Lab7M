@@ -7,7 +7,11 @@ public class Lab7Main {
         System.out.print("Test");
 
         TreeMap<String, TreeSet<String>> testMap = new TreeMap<>();
-       testMap =  myFileReader.readFileToTreeMap(args[0]);
+     //  testMap =  myFileReader.readFileToTreeMap(args[0]);
+        myFileReader fileReader = new myFileReader();
+
+        testMap = fileReader.readFileToTreeMap(args[0]);
+System.out.println(testMap);
 
     }
 }

@@ -28,15 +28,14 @@ public class myFileReader implements IFileReader {
     public TreeMap<String, TreeSet<String>> readFileToTreeMap(String filePath) throws FileNotFoundException {
         FileInputStream fileInStream = new FileInputStream(filePath); // File input stream
         Scanner inFile = new Scanner(fileInStream);
-        inFile.useDelimiter("[,\r\n]+");
+       // inFile.useDelimiter("[,\r\n]+");
 
         TreeMap<String, TreeSet<String>> newTree = new TreeMap<>();
         TreeSet<String> tempSet = new TreeSet<>();
         while (inFile.hasNext()) {
             newTree.put(inFile.next(), null);
-            for( int i = 0; i<7; i++) {
-                tempSet.add(inFile.next());
-            }
+            tempSet.add(inFile.next());
+
         }
 
         return newTree;
