@@ -1,11 +1,31 @@
-//By: Nikan Kadkhodazadeh
-
-
+/**
+ * MyFindCommon class implements the IFindCommon interface and provides a method to find common food items
+ * among specified countries based on the input TreeMap containing country-food mappings.
+ *
+ * @author Nikan Kadkhodazadeh
+ * @version 1.0
+ * @since [date]
+ * @see IFindCommon
+ */
 package Lab7;
 
 import java.util.*;
 
+/**
+ * MyFindCommon class implements the IFindCommon interface and provides a method to find common food items
+ * among specified countries based on the input TreeMap containing country-food mappings.
+ */
 class  MyFindCommon implements IFindCommon {
+
+    /**
+     * Retrieves a list of common food items among specified countries from the given TreeMap.
+     *
+     * @param countryFoods A TreeMap containing country-food mappings.
+     * @param countries    A list of country names for which common food items need to be found.
+     * @return A list of common food items among specified countries, or the food that is popular in the majority
+     *         of countries if there is no common food. Returns an empty list if any specified country does not
+     *         have food information.
+     */
     @Override
     public List<String> getCommonFood(TreeMap<String, TreeSet<String>> countryFoods, List<String> countries) {
         // Create a copy of the first country's food set to perform intersection
