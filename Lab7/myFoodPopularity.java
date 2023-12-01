@@ -24,6 +24,7 @@ public class myFoodPopularity implements IFoodPopularity{
 				} else if (countries2.contains(country)) {
 					foodCount.put(food, foodCount.get(food) - 1);
 				}
+				System.out.println("Liban");
 			}
 		}
 		// Add the foods that are popular in majority of the countries in countries1
